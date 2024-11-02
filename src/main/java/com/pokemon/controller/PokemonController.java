@@ -24,6 +24,11 @@ public class PokemonController {
 	public String titulo() {
 		return "Página de Pokémon";
 	}
+	
+	@GetMapping({"", "/", "/pokemon"})
+	public String redirectInicio() {
+	    return "redirect:/pokemon/inicio";
+	}
 
 	@GetMapping("{name}")
 	public String getPokemon(@PathVariable String name, Model model) {
