@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:replace="fragmentos/header :: head"></head>
+<body class="bg-dark">
+	<!-- Navbar -->
+	<div th:replace="fragmentos/navbar :: navbar"></div>
+
+	<!-- Imagen de título centrada -->
+<!-- Imagen de título centrada con más separación -->
+<div class="text-center" style="margin-top: 100px;">
+    <img
+        src="https://nintendo.pe/wp-content/uploads/2018/09/International_Pok%C3%A9mon_logo.svg_-600x221.png"
+        alt="Título" class="img-fluid" style="width: 40%;">
+</div>
+
+
+<div th:if="${pokemonNull}" class="text-center">
+    <div class="alert alert-danger mt-5" th:text="${pokemonNull}"></div>
+    <img src="https://static.wikia.nocookie.net/pkmnshuffle/images/7/7e/Pikachu_%28Dizzy%29.png"
+         alt="Pikachu mareado" class="img-fluid" style="width: 10%;">
+</div>
+
+
+<div th:if="${pokemon}"
+	class="container d-flex justify-content-center align-items-center vh-100">
+	<div class="pokemon-card card text-center" style="width: 18rem;">
+		<img th:src="${pokemon.sprites.other.officialArtwork.frontDefault}"
+			class="card-img-top" alt="${pokemon.name}">
+		<div class="card-body">
+			<h5 class="card-title" th:text="${pokemon.name.toUpperCase()}"></h5>
+			<p class="card-text"
+				th:text="'Número en la pokédex: ' + ${pokemon.id}"></p>
+			<p class="card-text"
+				th:text="'Altura: ' + ${pokemon.height}/10 + ' metros'"></p>
+			<p class="card-text"
+				th:text="'Peso: ' + ${pokemon.weight}/10 + ' kilogramos'"></p>
+			<h6 class="mt-3">Sprites</h6>
+			<div class="d-flex justify-content-around">
+				<img th:src="${pokemon.sprites.frontDefault}" alt="Front Default"
+					class="img-fluid" style="width: 48px; height: 48px;" /> <img
+					th:src="${pokemon.sprites.backDefault}" alt="Back Default"
+					class="img-fluid" style="width: 48px; height: 48px;" /> <img
+					th:src="${pokemon.sprites.frontShiny}" alt="Front Shiny"
+					class="img-fluid" style="width: 48px; height: 48px;" /> <img
+					th:src="${pokemon.sprites.backShiny}" alt="Back Shiny"
+					class="img-fluid" style="width: 48px; height: 48px;" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<div th:replace="fragmentos/scripts :: scripts"></div>
+</body>
+</html>

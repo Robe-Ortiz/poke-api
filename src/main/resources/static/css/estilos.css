@@ -1,0 +1,23 @@
+.pokemon-card {
+	margin-top: 20px;
+	border: 1px solid #dee2e6;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar{
+	font-weight: bold;
+}
+
+.navbar-brand img {
+	height: 40px;
+}
+
+.index {
+    background: url("https://external-preview.redd.it/odqgKwzacwZw_9VTCnFXkBhVcAMCX5UUb_rkIiSpzf4.jpg?auto=webp&s=4b6b05530eed1aa37621b58932187797641cf493");
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    width: 100%;
+    overflow: hidden; 
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:replace="fragmentos/header :: head"></head>
+<body  class="bg-dark">
+	<!-- Navbar -->
+	<div th:replace="fragmentos/navbar :: navbar"></div>
+
+	<!-- Imagen de título centrada -->
+<!-- Imagen de título centrada con más separación -->
+<div class="text-center" style="margin-top: 100px;">
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4" th:each="pokemon : ${pokemons}">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title" th:text="${pokemon.name.toUpperCase()}"></h5>
+                    <a th:href="@{/pokemon/{name}(name=${pokemon.name})}" class="btn btn-success">Ver Pokémon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div th:replace="fragmentos/scripts :: scripts"></div>
+</body>
+</html>
